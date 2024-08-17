@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            color: #0044cc;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 15px auto;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p strong {
+            color: #0044cc;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        ul li {
+            font-size: 18px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Link Styles */
+        a {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            text-align: center;
+            color: #fff;
+            background-color: #0044cc;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        a:hover {
+            background-color: #003399;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            p, ul {
+                width: 90%;
+            }
+
+            h1, h2, h3 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    
+    <p><strong>Grand Prix Name:</strong> {{ GP_name }}</p>
+    <p><strong>Driver:</strong> {{ driver }}</p>
+    <p><strong>Constructor:</strong> {{ constructor }}</p>
+    <p><strong>Qualifying Position:</strong> {{ quali_pos }}</p>
+    <p><strong>Driver Confidence:</strong> {{ driver_confidence }}</p>
+    <p><strong>Constructor Reliability:</strong> {{ constructor_relaiblity }}</p>
+    
+    <h2>Predicted Race Position: {{ prediction }}</h2>
+    
+    <h3>Class Probabilities:</h3>
+    <ul>
+        {% for prob in probability %}
+        <li>{{ prob }}</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="/predict">Make Another Prediction</a>
+</body>
+</html>

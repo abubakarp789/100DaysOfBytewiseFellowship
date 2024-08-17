@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Metrics</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            color: #0044cc;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 15px auto;
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p strong {
+            color: #0044cc;
+        }
+
+        a {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            text-align: center;
+            color: #fff;
+            background-color: #0044cc;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        a:hover {
+            background-color: #003399;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            img {
+                max-width: 100%;
+            }
+
+            p {
+                width: 90%;
+            }
+
+            a {
+                width: 80%;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Model Performance Metrics</h1>
+    <img src="{{ url_for('static', filename='confusion_matrix.png') }}" alt="Confusion Matrix">
+    
+    <p><strong>Precision:</strong> 0.9261</p>
+    <p><strong>Recall:</strong> 0.9192</p>
+    <p><strong>F1-Score:</strong> 0.9222</p>
+    
+    <a href="/">Back to Home</a>
+</body>
+</html>

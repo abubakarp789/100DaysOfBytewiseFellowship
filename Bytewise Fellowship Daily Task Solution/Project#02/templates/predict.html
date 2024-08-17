@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Page</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9ecef;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color:#0044cc;
+            margin-top: 10rem;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input[type="text"], input[type="number"], input[type="submit"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 5px 0;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus {
+            border-color: #0044cc;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        input[type="submit"] {
+            background-color: #0044cc;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            border: none;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #003399;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        a {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+            background-color: #0044cc;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        a:hover {
+            background-color: #003399;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            form {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="/">Go Back Home</a>
+    <h1>Enter Features to Make a Prediction</h1>
+    <form action="/predict" method="post">
+        <input type="text" name="GP_name" placeholder="Grand Prix Name" required>
+        <input type="number" name="quali_pos" placeholder="Qualifying Position" required>
+        <input type="text" name="constructor" placeholder="Constructor" required>
+        <input type="text" name="driver" placeholder="Driver" required>
+        <input type="number" step="any" name="driver_confidence" placeholder="Driver Confidence" required>
+        <input type="number" step="any" name="constructor_relaiblity" placeholder="Constructor Reliability" required>
+        <input type="submit" value="Predict">
+    </form>
+    <div class="button-container">
+        <a href="/">Go Back Home</a>
+        <a href="/metrics">View Metrics</a>
+    </div>
+</body>
+</html>
