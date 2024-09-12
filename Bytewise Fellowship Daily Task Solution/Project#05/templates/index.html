@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Custom CSS -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background-color: #f7f7f7;
+      }
+
+      .container {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      header {
+        background-color: #f8f8f8;
+        padding: 20px 0;
+        border-bottom: 1px solid #ddd;
+      }
+
+      header .logo {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      header .logo svg {
+        margin-right: 10px;
+        background-color: #28a745;
+        padding: 8px;
+        border-radius: 50%;
+        color: white;
+      }
+
+      nav a {
+        margin-right: 15px;
+        text-decoration: none;
+        color: #333;
+      }
+
+      nav a:hover {
+        color: #28a745;
+      }
+
+      .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 100px 0;
+        background-color: #e9f5ee;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        color: #333;
+      }
+
+      .hero p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+
+      .hero .buttons a {
+        display: inline-block;
+        padding: 10px 20px;
+        text-decoration: none;
+        background-color: #28a745;
+        color: white;
+        margin-right: 10px;
+        border-radius: 5px;
+      }
+
+      .hero .buttons a:hover {
+        background-color: #218838;
+      }
+
+      .card-section {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0;
+      }
+
+      .card {
+        background-color: white;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 30%;
+      }
+
+      .card svg {
+        margin-bottom: 10px;
+        color: #28a745;
+        width: 50px;
+        height: 50px;
+      }
+
+      .card h2 {
+        margin-bottom: 10px;
+        font-size: 24px;
+        color: #333;
+      }
+
+      .card p {
+        color: #666;
+        font-size: 16px;
+      }
+
+      .card a {
+        display: inline-block;
+        margin-top: 20px;
+        color: #28a745;
+        text-decoration: none;
+      }
+
+      .card a:hover {
+        text-decoration: underline;
+      }
+
+      .testimonials {
+        padding: 50px 0;
+        background-color: #f1f1f1;
+        text-align: center;
+      }
+
+      .testimonials h1 {
+        font-size: 36px;
+        color: #333;
+        margin-bottom: 30px;
+      }
+
+      .testimonial {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .testimonial svg {
+        color: #999;
+        margin-right: 15px;
+      }
+
+      .testimonial p {
+        font-size: 16px;
+        color: #666;
+      }
+
+      footer {
+        background-color: #28a745;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+      }
+    </style>
+
+    <title>Churn Prediction</title>
+  </head>
+  <body>
+
+    <header>
+      <div class="container">
+        <div class="logo">
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24"> -->
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          CodeJay
+        </div>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/about">About Us</a>
+          <a href="/prediction">Prediction</a>
+          <a href="/analysis">Analysis</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <div>
+          <h1>Machine Learning Project</h1>
+          <p>Customer Churn Prediction using advanced machine learning techniques. Explore predictions and analysis through our interactive platform.</p>
+          <div class="buttons">
+            <a href="/prediction">Prediction</a>
+            <a href="/analysis">Analysis</a>
+          </div>
+        </div>
+        <div>
+          <!-- <img src="../static/herosection.svg" alt="Churn Prediction"> -->
+        </div>
+      </div>
+    </section>
+
+    <section class="card-section container">
+      <div class="card">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+        <h2>Shooting Stars</h2>
+        <p>Analyze data with advanced techniques to identify customer churn early and accurately.</p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="card">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path></svg>
+        <h2>The Catalyzer</h2>
+        <p>Predict and visualize churn using machine learning models tailored for business needs.</p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="card">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"></circle><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path></svg>
+        <h2>Neptune</h2>
+        <p>Drive actionable insights from customer behavior and improve retention strategies.</p>
+        <a href="#">Learn More</a>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <h1>Testimonials</h1>
+        <div class="testimonial">
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 975.036 975.036"><path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50z"></path></svg> -->
+          <p>"This platform has revolutionized our customer retention strategy."</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2024 CodeJay — <a href="https://twitter.com/codejay" style="color: white; text-decoration: underline;">@codejay</a></p>
+    </footer>
+
+  </body>
+</html>

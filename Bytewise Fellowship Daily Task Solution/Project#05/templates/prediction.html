@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .form-group input, 
+        .form-group select {
+            width: 48%;
+            padding: 6px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        input[type="text"]:focus, 
+        select:focus {
+            outline: none;
+            border-color: #00b3ff;
+        }
+        /* General button styling */
+        .btn, .back-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 8px 16px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            border: none;
+            color: white;
+        }
+
+        /* Primary button styling */
+        .btn {
+            background-color: #28a745;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+
+        /* Back button styling */
+        .back-btn {
+            background-color: #007bff;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .form-group input, 
+            .form-group select {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header text-center">
+            <h1>Prediction</h1>
+            <p>Quickly build an effective pricing table for your potential customers with this form.</p>
+        </div>
+
+        <a class="back-btn" href="/" role="button">Back</a><br><br>
+
+        <form action="/prediction" method="POST">
+            <div class="form-group">
+                <input type="text" id="age" name="age" placeholder="Enter age">
+                <input type="text" id="last_login" name="last_login" placeholder="Days since last login">
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="avg_time_spent" name="avg_time_spent" placeholder="Average time spent">
+                <input type="text" id="avg_transaction_value" name="avg_transaction_value" placeholder="Average transaction value">
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="points_in_wallet" name="points_in_wallet" placeholder="Points in wallet">
+                <input type="text" id="date" name="date" placeholder="Enter Date (YYYY-MM-DD)">
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="time" name="time" placeholder="Enter time (HH:MM:SS)">
+                <select id="gender" name="gender">
+                    <option value="Unknown" selected>--select gender--</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select id="region_category" name="region_category">
+                    <option value="Unknown" selected>--select region_category--</option>
+                    <option value="Town">Town</option>
+                    <option value="City">City</option>
+                    <option value="Village">Village</option>
+                </select>
+                <select id="membership_category" name="membership_category">
+                    <option value="Unknown" selected>--select membership_category--</option>
+                    <option value="Basic Membership">Basic Membership</option>
+                    <option value="No Membership">No Membership</option>
+                    <option value="Gold Membership">Gold Membership</option>
+                    <option value="Platinum Membership">Platinum Membership</option>
+                    <option value="Silver Membership">Silver Membership</option>
+                    <option value="Premium Membership">Premium Membership</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select id="joined_through_referral" name="joined_through_referral">
+                    <option value="Unknown" selected>--select joined_through_referral--</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+                <select id="preferred_offer_types" name="preferred_offer_types">
+                    <option value="Unknown" selected>--select preferred_offer_types--</option>
+                    <option value="Gift Vouchers/Coupons">Gift Vouchers/Coupons</option>
+                    <option value="Credit/Debit Card Offers">Credit/Debit Card Offers</option>
+                    <option value="Without Offers">Without Offers</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select id="medium_of_operation" name="medium_of_operation">
+                    <option value="Unknown" selected>--select medium_of_operation--</option>
+                    <option value="Desktop">Desktop</option>
+                    <option value="Smartphone">Smartphone</option>
+                    <option value="Both">Both</option>
+                </select>
+                <select id="internet_option" name="internet_option">
+                    <option value="Unknown" selected>--select internet_option--</option>
+                    <option value="Wi-Fi">Wi-Fi</option>
+                    <option value="Mobile_Data">Mobile_Data</option>
+                    <option value="Fiber_Optic">Fiber_Optic</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select id="used_special_discount" name="used_special_discount">
+                    <option value="Unknown" selected>--select used_special_discount--</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                <select id="offer_application_preference" name="offer_application_preference">
+                    <option value="Unknown" selected>--select offer_application_preference--</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select id="past_complaint" name="past_complaint">
+                    <option value="Unknown" selected>--select past_complaint--</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                <select id="feedback" name="feedback">
+                    <option value="Unknown" selected>--select feedback--</option>
+                    <option value="Poor Product Quality">Poor Product Quality</option>
+                    <option value="No reason specified">No reason specified</option>
+                    <option value="Too many ads">Too many ads</option>
+                    <option value="Poor Website">Poor Website</option>
+                    <option value="Poor Customer Service">Poor Customer Service</option>
+                    <option value="Reasonable Price">Reasonable Price</option>
+                    <option value="User Friendly Website">User Friendly Website</option>
+                    <option value="Products always in Stock">Products always in Stock</option>
+                    <option value="Quality Customer Care">Quality Customer Care</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        <div>
+            <h2><b>{{prediction_text}}</b></h2>
+        </div>
+    </div>
+
+</body>
+</html>
