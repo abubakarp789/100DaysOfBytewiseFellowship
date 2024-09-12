@@ -161,6 +161,24 @@
         color: #666;
       }
 
+      .documentation {
+        background-color: #f7f7f7;
+        padding: 50px 0;
+      }
+
+      .documentation h2 {
+        font-size: 36px;
+        color: #333;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .documentation p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #666;
+      }
+
       footer {
         background-color: #28a745;
         color: white;
@@ -169,21 +187,17 @@
       }
     </style>
 
-    <title>Churn Prediction</title>
+    <title>Churn Prediction - AbuBakar</title>
   </head>
   <body>
 
     <header>
       <div class="container">
         <div class="logo">
-          <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24"> -->
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-          </svg>
-          CodeJay
+          <h1>Churn Prediction</h1>
         </div>
         <nav>
           <a href="/">Home</a>
-          <a href="/about">About Us</a>
           <a href="/prediction">Prediction</a>
           <a href="/analysis">Analysis</a>
         </nav>
@@ -206,39 +220,60 @@
       </div>
     </section>
 
+    <!-- Add Documentation Section -->
+    <section class="documentation">
+      <div class="container">
+        <h2>Churn Risk Prediction Project Documentation</h2>
+
+        <p><strong>Project Overview:</strong> This project aims to predict the churn risk of customers using machine learning techniques. The dataset contains customer-related information such as demographics, transaction details, and behavior patterns, which are used to estimate the likelihood of customer churn. The process involves data cleaning, preprocessing, visualization, and model training using different machine learning algorithms including Decision Tree, Random Forest, and an Artificial Neural Network (ANN).</p>
+
+        <p><strong>1. Data Preprocessing:</strong><br>
+        - Dataset Import: The data is imported from a CSV file (`train.csv`). Missing categorical values in columns like `region_category` are filled with the mode, and missing numerical values in `points_in_wallet` are filled with the mean.<br>
+        - Feature Engineering: Date-related features are extracted from `joining_date` and `last_visit_time`, and one-hot encoding is applied to categorical columns. Outliers in `avg_transaction_value` are removed using the IQR method.
+        </p>
+
+        <p><strong>2. Data Visualization:</strong><br>
+        - Histograms, correlation heatmaps, and boxplots were used to explore relationships and the distribution of features, with a special focus on `avg_transaction_value` and its relation to `churn_risk_score`.</p>
+
+        <p><strong>3. Feature Selection:</strong><br>
+        - Using an ExtraTreesRegressor, the top 20 important features for predicting churn risk were identified. These features include `age`, `avg_transaction_value`, and `membership_category`.</p>
+
+        <p><strong>4. Model Training:</strong><br>
+        - Three models were trained: Decision Tree, Random Forest, and an Artificial Neural Network (ANN). The Random Forest model was saved as `random_forest_model.pkl` and the ANN was built using PyTorch.</p>
+
+        <p><strong>5. Model Evaluation:</strong><br>
+        - Evaluation metrics were calculated for all models. Random Forest performed better than the Decision Tree, and the ANN further improved the predictions.</p>
+
+        <p><strong>6. Model Inference:</strong><br>
+        - Both the Random Forest and ANN models were used to make predictions on the test data, and the results were printed for comparison.</p>
+
+        <p><strong>Conclusion:</strong> This project successfully demonstrated the use of machine learning models for predicting customer churn risk, with Random Forest and ANN models performing well on the test data.</p>
+      </div>
+    </section>
+
     <section class="card-section container">
       <div class="card">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
         <h2>Shooting Stars</h2>
         <p>Analyze data with advanced techniques to identify customer churn early and accurately.</p>
-        <a href="#">Learn More</a>
+        <a href="/analysis">Learn More</a>
       </div>
       <div class="card">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path></svg>
-        <h2>The Catalyzer</h2>
-        <p>Predict and visualize churn using machine learning models tailored for business needs.</p>
-        <a href="#">Learn More</a>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+        <h2>Prediction Models</h2>
+        <p>Explore how machine learning models help in predicting churn risks and improving customer retention strategies.</p>
+        <a href="/prediction">Make a Prediction</a>
       </div>
       <div class="card">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"></circle><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path></svg>
-        <h2>Neptune</h2>
-        <p>Drive actionable insights from customer behavior and improve retention strategies.</p>
-        <a href="#">Learn More</a>
-      </div>
-    </section>
-
-    <section class="testimonials">
-      <div class="container">
-        <h1>Testimonials</h1>
-        <div class="testimonial">
-          <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 975.036 975.036"><path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50z"></path></svg> -->
-          <p>"This platform has revolutionized our customer retention strategy."</p>
-        </div>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+        <h2>Future Insights</h2>
+        <p>Understand which customer behaviors are linked to higher churn probabilities through advanced insights.</p>
+        <a href="/future">Discover More</a>
       </div>
     </section>
 
     <footer>
-      <p>© 2024 CodeJay — <a href="https://twitter.com/codejay" style="color: white; text-decoration: underline;">@codejay</a></p>
+      <p>&copy; 2024 Churn Prediction Project. All rights reserved.</p>
     </footer>
 
   </body>
